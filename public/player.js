@@ -152,7 +152,7 @@ function vOpen(s) {
     ${!answered && !closed ? `<span class="secs num" id="secs">${secsLeft(s)}</span>` : ''}</div>`;
   const prompt = `<div class="prompt rise">${q.emoji ? `<span style="margin-right:.25em">${esc(q.emoji)}</span>` : ''}${esc(q.prompt)}</div>${q.hint ? `<div class="kicker">${esc(q.hint)}</div>` : ''}${q.song ? `<div class="chip" style="align-self:flex-start"><span class="eq ${closed ? 'off' : ''}"><b></b><b></b><b></b></span> Lyt til storskærmen${q.clips ? ' · trin ' + ((s.stage || 0) + 1) + '/' + q.clips : ''}</div>` : ''}`;
   if (answered) {
-    main.innerHTML = `${head}${prompt}<div class="lock pop"><div class="kicker">${closed ? 'Låst ind – venter på afsløring' : '🔒 Låst ind'}</div>
+    main.innerHTML = `${head}${prompt}<div class="lock pop"><div class="kicker">${closed ? 'Svar sendt – venter på afsløring' : '✅ Svar sendt'}</div>
       <div style="font-size:1.5rem;font-weight:800;letter-spacing:-.02em">${esc(ansLabel(q, me.answer))}</div>
       ${me.answer.wager ? `<div class="chip" style="background:var(--gold);color:#241800">🎲 Satset ${fmt(me.answer.wager)}</div>` : ''}${me.answer.joker ? '<div class="chip" style="background:var(--gold);color:#241800">🃏 Joker spillet – point ×2</div>' : ''}
       <span class="eq"><b></b><b></b><b></b><b></b><b></b></span></div>
@@ -172,13 +172,13 @@ function vOpen(s) {
     const two = q.options.length === 2;
     body += `<div class="tiles ${two ? 'two' : ''}" id="tl">${q.options.map((o, i) => `<button class="tile ${q.type === 'vote' ? 'vote' : ''} ${q.type === 'tf' ? 'big' : ''}" data-i="${i}">${q.type === 'tf' ? '' : `<span class="l">${LETTERS[i]}</span>`}<span>${esc(o)}</span></button>`).join('')}</div>`;
   } else if (q.type === 'text') {
-    body += `<input class="field" id="tx" maxlength="60" placeholder="Skriv dit svar…" autocomplete="off" autocapitalize="words" spellcheck="false"><button class="btn" id="go">Lås ind 🔒</button>`;
+    body += `<input class="field" id="tx" maxlength="60" placeholder="Skriv dit svar…" autocomplete="off" autocapitalize="words" spellcheck="false"><button class="btn" id="go">Send svar ➜</button>`;
   } else if (q.type === 'year') {
     body += `<div class="yearbox"><div class="y" id="yv">${U.year}</div><input type="range" id="yr" min="${q.yearMin}" max="${q.yearMax}" value="${U.year}">
-      <div class="nudge"><button data-d="-5">−5</button><button data-d="-1">−1</button><button data-d="1">+1</button><button data-d="5">+5</button></div></div><button class="btn" id="go">Lås ind 🔒</button>`;
+      <div class="nudge"><button data-d="-5">−5</button><button data-d="-1">−1</button><button data-d="1">+1</button><button data-d="5">+5</button></div></div><button class="btn" id="go">Send svar ➜</button>`;
   } else if (q.type === 'order') {
     body += `<div class="kicker">Tryk i rækkefølge – nr. 1 først</div><div class="tiles" id="ol">${q.options.map((o, i) => `<button class="tile orderitem" data-i="${i}"><span class="n"></span><span>${esc(o)}</span></button>`).join('')}</div>
-      <div style="display:flex;gap:10px"><button class="btn ghost" id="rs" style="flex:1">Nulstil</button><button class="btn" id="go" style="flex:2" disabled>Lås ind 🔒</button></div>`;
+      <div style="display:flex;gap:10px"><button class="btn ghost" id="rs" style="flex:1">Nulstil</button><button class="btn" id="go" style="flex:2" disabled>Send svar ➜</button></div>`;
   }
   main.innerHTML = head + prompt + body;
   bindQuestion(s);

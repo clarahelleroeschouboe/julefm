@@ -8,16 +8,15 @@ const sNow = () => Date.now() + clockOffset;
 
 /* ---------- Temaer: hver runde får sin egen farve ---------- */
 const THEMES = {
-  night: { bg: '#0B0F14', fg: '#F6EFDD', ac: '#C6FF3D', acfg: '#0B0F14' },
-  tomat: { bg: '#E8362A', fg: '#FFF3E0', ac: '#FFD23F', acfg: '#2a0a00' },
-  kobolt: { bg: '#2B3BFF', fg: '#FFF3E0', ac: '#C6FF3D', acfg: '#0B0F14' },
-  lime: { bg: '#C6FF3D', fg: '#0B0F14', ac: '#E8362A', acfg: '#FFF3E0' },
-  pink: { bg: '#FF9ED2', fg: '#2a0a1c', ac: '#2B3BFF', acfg: '#ffffff' },
-  gran: { bg: '#0E4D3A', fg: '#F6EFDD', ac: '#FF7A59', acfg: '#240800' },
-  guld: { bg: '#FFC53D', fg: '#1b1200', ac: '#E8362A', acfg: '#fff3e0' },
-  creme: { bg: '#F6EFDD', fg: '#14201b', ac: '#0E4D3A', acfg: '#F6EFDD' }
+  night:    { bg: '#0F1A14', fg: '#F6EFDD', ac: '#FFC53D', acfg: '#1a1200' },
+  rod:      { bg: '#B3202A', fg: '#FFF6E5', ac: '#FFC53D', acfg: '#2a0a00' },
+  gran:     { bg: '#12503A', fg: '#F6EFDD', ac: '#FFC53D', acfg: '#1a1200' },
+  creme:    { bg: '#F4EBD8', fg: '#1B2A22', ac: '#B3202A', acfg: '#FFF6E5' },
+  bordeaux: { bg: '#6E1423', fg: '#FFF1DC', ac: '#F2C879', acfg: '#2a0a00' },
+  skov:     { bg: '#0B3B2E', fg: '#F6EFDD', ac: '#E8514A', acfg: '#ffffff' },
+  guld:     { bg: '#D9A441', fg: '#1F1405', ac: '#8E1B26', acfg: '#FFF6E5' }
 };
-const ROUND_THEMES = ['tomat', 'kobolt', 'lime', 'pink', 'gran', 'guld', 'night', 'creme'];
+const ROUND_THEMES = ['rod', 'gran', 'creme', 'bordeaux', 'skov', 'guld', 'night', 'rod'];
 function applyTheme(name) {
   const t = THEMES[name] || THEMES.night, st = document.documentElement.style;
   if (document.body.dataset.theme === name) return;
