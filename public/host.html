@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0B0F14">
+<title>JULE FM – quizmaster</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+  body{overflow:auto;font-size:15px}
+  .wrap{max-width:1500px;margin:0 auto;padding:14px 18px 40px}
+  header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:6px 0 14px;border-bottom:1.5px solid var(--line);margin-bottom:16px}
+  header .logo{font-size:1.5rem}
+  .tabs{display:flex;gap:6px;margin-left:10px;flex-wrap:wrap}
+  .tabs button{padding:.55em 1.1em;border-radius:99px;font-weight:700;background:var(--soft);border:1.5px solid var(--line)}
+  .tabs button.on{background:var(--ac);color:var(--acfg);border-color:transparent}
+  header .sp{margin-left:auto;display:flex;gap:8px;align-items:center}
+  a.lnk{color:var(--fg);font-weight:700;text-decoration:none;padding:.5em .9em;border-radius:99px;border:1.5px solid var(--line);background:var(--soft)}
+  .grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start}
+  @media(max-width:1000px){.grid{grid-template-columns:1fr}}
+  .panel{background:var(--soft);border:1.5px solid var(--line);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px}
+  .panel h3{font-size:.8rem;font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.7;font-weight:700}
+  .stack{display:flex;flex-direction:column;gap:16px}
+  .row2{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  .big-next{font-size:1.6rem;padding:1em;border-radius:20px}
+  .timer{font-family:var(--mono);font-size:3rem;font-weight:700;line-height:1}
+  .ph{display:inline-block;padding:.3em .8em;border-radius:99px;font-family:var(--mono);font-weight:700;text-transform:uppercase;font-size:.78rem;background:var(--fg);color:var(--bg)}
+  .btn.sm.warn{background:var(--gold);color:#241800}.btn.sm.red{background:var(--no);color:#fff}
+  .qbox{padding:14px;border-radius:16px;background:rgba(0,0,0,.28);display:flex;flex-direction:column;gap:8px}
+  .qbox .p{font-size:1.35rem;font-weight:800;letter-spacing:-.02em}
+  .copt{display:flex;gap:10px;align-items:center;padding:8px 12px;border-radius:12px;background:var(--soft)}
+  .copt.ok{background:var(--ok);color:#04210f;font-weight:800}
+  .copt .bar{margin-left:auto;font-family:var(--mono)}
+  .pl{display:flex;flex-direction:column;gap:4px;max-height:60vh;overflow:auto}
+  .pr{display:grid;grid-template-columns:2em 1fr auto auto;gap:8px;align-items:center;padding:6px 8px;border-radius:10px;background:rgba(255,255,255,.05)}
+  .pr .rk{font-family:var(--mono);opacity:.6}.pr .nm small{opacity:.55;margin-left:6px}.pr .sc{font-family:var(--mono);font-weight:700}
+  .pr .st{width:10px;height:10px;border-radius:50%;background:var(--soft2);display:inline-block;margin-right:6px}.pr .st.on{background:var(--ok)}.pr .st.off{background:var(--no);opacity:.5}
+  .pr .a{display:flex;gap:3px}.pr .a button{padding:2px 7px;border-radius:7px;background:var(--soft2);font-family:var(--mono);font-size:.78rem;font-weight:700}
+  .pr.bot{opacity:.6}
+  .feed{display:flex;flex-direction:column;gap:4px;max-height:200px;overflow:auto;font-size:.9rem}
+  .feed div{padding:4px 8px;border-radius:8px;background:rgba(255,255,255,.05)}
+  select,input[type=text],input[type=number],input[type=password],textarea{background:rgba(0,0,0,.3);border:1.5px solid var(--line);border-radius:10px;padding:.55em .8em;font-weight:600;color:var(--fg);width:100%;outline:none}
+  select option{color:#000}
+  textarea{resize:vertical;min-height:4.5em;font-family:inherit}
+  input:focus,textarea:focus,select:focus{border-color:var(--ac)}
+  label.f{display:flex;flex-direction:column;gap:5px;font-size:.82rem;font-weight:700;opacity:.95}
+  label.f>span{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;opacity:.7}
+  label.ck{display:flex;gap:8px;align-items:center;font-weight:700}
+  .muted{opacity:.65;font-size:.88rem}
+  .login{max-width:420px;margin:12vh auto;display:flex;flex-direction:column;gap:14px;text-align:center}
+  /* editor */
+  .ed{display:grid;grid-template-columns:330px minmax(0,1fr);gap:16px;align-items:start}
+  @media(max-width:1000px){.ed{grid-template-columns:1fr}}
+  .tree{max-height:78vh;overflow:auto;display:flex;flex-direction:column;gap:4px}
+  .tr{display:flex;gap:8px;align-items:center;padding:7px 10px;border-radius:10px;cursor:pointer;background:rgba(255,255,255,.04);font-weight:600;font-size:.9rem}
+  .tr.sel{background:var(--ac);color:var(--acfg)}.tr.round{background:var(--soft2);font-weight:800;margin-top:8px}.tr.round.sel{background:var(--ac)}
+  .tr .t{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tr small{opacity:.6;font-family:var(--mono);font-size:.7rem}
+  .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+  .hit{display:flex;gap:10px;align-items:center;padding:8px;border-radius:12px;background:rgba(255,255,255,.06);cursor:pointer}.hit:hover{background:var(--soft2)}
+  .hit img{width:46px;height:46px;border-radius:8px;object-fit:cover}.hit b{display:block;font-size:.92rem}.hit span{font-size:.8rem;opacity:.7}
+  .songbox{display:flex;gap:12px;align-items:center;padding:10px;border-radius:14px;background:rgba(0,0,0,.28)}.songbox img{width:64px;height:64px;border-radius:10px;object-fit:cover}
+  .note{padding:12px 14px;border-radius:14px;background:rgba(255,197,61,.12);border:1.5px solid rgba(255,197,61,.45);font-size:.9rem;line-height:1.35}
+  code,.code{font-family:var(--mono);background:rgba(0,0,0,.35);padding:.15em .5em;border-radius:6px;font-size:.88em;word-break:break-all}
+  ol.steps{padding-left:1.3em;display:flex;flex-direction:column;gap:6px;line-height:1.35}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#000;color:#fff;padding:12px 18px;border-radius:14px;z-index:80;font-weight:700;animation:rise .3s;max-width:90vw}
+  .toast.err{background:var(--no)}
+  .dirty{background:var(--gold)!important;color:#241800!important}
+</style>
+</head>
+<body>
+<div id="login" class="login" hidden>
+  <div class="logo" style="font-size:3rem;justify-content:center">JULE<i>FM</i></div>
+  <div class="kicker">Quizmaster-adgang</div>
+  <input type="password" id="pw" placeholder="Quizmaster-kode" autocomplete="current-password">
+  <button class="btn" id="pwgo">Log ind</button>
+  <div id="pwerr" class="kicker" style="color:var(--no)"></div>
+</div>
+<div id="app" class="wrap" hidden>
+  <header>
+    <span class="logo">JULE<i>FM</i></span><span class="kicker">Quizmaster</span>
+    <div class="tabs" id="tabs">
+      <button data-t="live" class="on">🎛️ Live</button><button data-t="edit">✏️ Redigér quiz</button><button data-t="spotify">🎵 Spotify</button><button data-t="test">🧪 Test &amp; nulstil</button>
+    </div>
+    <div class="sp"><span class="dot" id="hdot" style="width:10px;height:10px;border-radius:50%;background:var(--no)"></span>
+      <a class="lnk" href="/tv" target="_blank">📺 Storskærm</a><a class="lnk" href="/" target="_blank">📱 Spillervisning</a></div>
+  </header>
+  <section id="tab-live"></section>
+  <section id="tab-edit" hidden></section>
+  <section id="tab-spotify" hidden></section>
+  <section id="tab-test" hidden></section>
+</div>
+<script src="/common.js"></script>
+<script src="/host.js"></script>
+<script src="/editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0B0F14">
+<title>JULE FM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<style>
+  .app{min-height:100dvh;display:flex;flex-direction:column;padding:max(14px,env(safe-area-inset-top)) 18px max(18px,env(safe-area-inset-bottom));max-width:560px;margin:0 auto;position:relative;z-index:2}
+  .top{display:flex;align-items:center;gap:8px;padding-bottom:14px}
+  .top .logo{font-size:1.15rem;margin-right:auto}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--ok);flex:none}.dot.off{background:var(--no);animation:blink 1s infinite}
+  main{flex:1;display:flex;flex-direction:column;gap:16px;min-height:0}
+  .center{flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px}
+  .t-xl{font-size:clamp(2.6rem,15vw,4.4rem)}
+  .t-l{font-size:clamp(1.9rem,9vw,2.6rem)}
+  .emoji-xl{font-size:5.5rem;line-height:1}
+  .prompt{font-size:clamp(1.45rem,6.4vw,1.95rem);font-weight:800;letter-spacing:-.025em;line-height:1.08}
+  .qhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .secs{margin-left:auto;font-family:var(--mono);font-weight:700;font-size:1.5rem}
+  .tiles{display:grid;gap:10px}
+  .tiles.two{grid-template-columns:1fr 1fr}
+  .tile{display:flex;align-items:center;gap:12px;text-align:left;width:100%;padding:16px 16px;border-radius:20px;background:var(--soft);border:2px solid var(--line);font-weight:700;font-size:1.12rem;line-height:1.15;transition:transform .1s,background .15s,border-color .15s}
+  .tile:active{transform:scale(.97)}
+  .tile .l{flex:none;width:2.1em;height:2.1em;border-radius:12px;background:var(--fg);color:var(--bg);display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:.95rem}
+  .tile.sel{background:var(--ac);color:var(--acfg);border-color:transparent}.tile.sel .l{background:var(--acfg);color:var(--ac)}
+  .tile.ok{background:var(--ok);color:#04210f;border-color:transparent}
+  .tile.bad{opacity:.45}
+  .tile.big{justify-content:center;text-align:center;font-size:1.5rem;padding:30px 12px}
+  .tiles.two .tile.vote{flex-direction:column;justify-content:center;text-align:center;padding:30px 12px;min-height:150px;font-size:1.25rem}
+  .stakes{display:flex;gap:8px;flex-wrap:wrap}
+  .stakes button{flex:1;min-width:70px;padding:12px 6px;border-radius:14px;background:var(--soft);border:2px solid var(--line);font-family:var(--mono);font-weight:700}
+  .stakes button.sel{background:var(--gold);color:#241800;border-color:transparent}
+  .joker{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:16px;border:2px dashed var(--line);font-weight:700;width:100%;text-align:left}
+  .joker.on{background:var(--gold);color:#241800;border-style:solid;border-color:transparent}
+  .yearbox{display:flex;flex-direction:column;align-items:center;gap:14px;padding:10px 0}
+  .yearbox .y{font-size:5.2rem;font-weight:800;letter-spacing:-.05em;font-variant-numeric:tabular-nums;line-height:1}
+  .yearbox input[type=range]{width:100%;accent-color:var(--ac);height:40px}
+  .nudge{display:flex;gap:8px;width:100%}.nudge button{flex:1;padding:12px 0;border-radius:14px;background:var(--soft);border:2px solid var(--line);font-family:var(--mono);font-weight:700}
+  .orderitem{position:relative}
+  .orderitem .n{flex:none;width:2.1em;height:2.1em;border-radius:50%;border:2px dashed var(--line);display:grid;place-items:center;font-family:var(--mono);font-weight:700}
+  .orderitem.sel .n{border:0;background:var(--acfg);color:var(--ac)}
+  .lock{display:flex;flex-direction:column;gap:10px;align-items:flex-start;padding:18px;border-radius:22px;background:var(--soft);border:2px solid var(--line)}
+  .res{padding:22px;border-radius:26px;display:flex;flex-direction:column;gap:6px}
+  .res.ok{background:var(--ok);color:#04210f}.res.no{background:var(--no);color:#fff}.res.mid{background:var(--gold);color:#241800}.res.none{background:var(--soft);border:2px solid var(--line)}
+  .res .pts{font-size:3.6rem;font-weight:800;letter-spacing:-.04em;line-height:1}
+  .card{padding:16px;border-radius:20px;background:var(--soft);border:1.5px solid var(--line)}
+  .song{display:flex;gap:14px;align-items:center}.song img{width:76px;height:76px;border-radius:12px;object-fit:cover;flex:none}
+  .song .cv{width:76px;height:76px;border-radius:12px;background:var(--soft2);display:grid;place-items:center;font-size:2rem;flex:none}
+  .song b{display:block;font-size:1.15rem;line-height:1.1}.song span{opacity:.75}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .offline{position:fixed;top:0;left:0;right:0;z-index:70;background:var(--no);color:#fff;text-align:center;padding:6px;font-size:.85rem;font-weight:700}
+  .toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#000;color:#fff;padding:12px 18px;border-radius:14px;z-index:80;font-weight:700;animation:rise .3s}
+  .badge-card{padding:24px;border-radius:28px;background:var(--ac);color:var(--acfg);text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center}
+  .dial{height:46px;border-radius:12px;background:repeating-linear-gradient(90deg,var(--fg) 0 2px,transparent 2px 12px);opacity:.55;position:relative;mask:linear-gradient(0deg,transparent,#000 40%)}
+  .dial::after{content:"";position:absolute;top:-6px;bottom:-6px;left:62%;width:3px;background:var(--no);border-radius:3px;box-shadow:0 0 14px var(--no)}
+</style>
+</head>
+<body class="grain">
+<div id="off" class="offline" hidden>Genopretter forbindelsen…</div>
+<div class="timerbar" id="tbar" hidden><div></div></div>
+<div class="app">
+  <div class="top" id="top" hidden>
+    <span class="logo">JULE<i>FM</i></span>
+    <span class="chip" id="rankchip"></span>
+    <span class="chip ac num" id="scorechip">0</span>
+    <span class="dot off" id="dot"></span>
+  </div>
+  <main id="main"></main>
+</div>
+<script src="/common.js"></script>
+<script src="/player.js"></script>
+</body>
+</html>

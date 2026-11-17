@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: jule-fm
+    runtime: node
+    plan: free
+    buildCommand: echo "ingen build nødvendig"
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: HOST_PASSWORD
+        sync: false   # du bliver bedt om at skrive din quizmaster-kode ved deploy

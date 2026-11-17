@@ -1,0 +1,797 @@
+{
+ "title": "JULE FM",
+ "subtitle": "Danmarks mest forkølede radiostation – sender live fra julefrokosten",
+ "settings": {
+  "defaultTime": 20,
+  "baseQuestionPoints": 1000,
+  "teamsEnabled": true,
+  "autoLock": true,
+  "spotifyClientId": ""
+ },
+ "rounds": [
+  {
+   "id": "r1",
+   "emoji": "🎧",
+   "title": "Intro-trappen",
+   "multiplier": 1,
+   "blurb": "Klippet bliver længere for hvert trin – men point-potten skrumper. Tør du gætte tidligt?",
+   "questions": [
+    {
+     "id": "q1",
+     "type": "choice",
+     "prompt": "Hvilken sang er det?",
+     "emoji": "🎹",
+     "options": [
+      "Bohemian Rhapsody",
+      "Somebody to Love",
+      "Don't Stop Me Now",
+      "Killer Queen"
+     ],
+     "correct": 0,
+     "clips": [
+      {
+       "ms": 1500
+      },
+      {
+       "ms": 4000
+      },
+      {
+       "ms": 8000
+      },
+      {
+       "ms": 15000
+      }
+     ],
+     "song": {
+      "query": "Queen Bohemian Rhapsody",
+      "title": "Bohemian Rhapsody",
+      "artist": "Queen",
+      "album": "",
+      "cover": "",
+      "year": 1975,
+      "uri": "",
+      "startMs": 0
+     },
+     "fact": "Singlen er 5 min 55 sek. – pladeselskabet mente den var alt for lang til radioen."
+    },
+    {
+     "id": "q2",
+     "type": "choice",
+     "prompt": "Hvilken sang er det?",
+     "emoji": "👑",
+     "options": [
+      "Waterloo",
+      "Dancing Queen",
+      "Mamma Mia",
+      "Fernando"
+     ],
+     "correct": 1,
+     "clips": [
+      {
+       "ms": 1500
+      },
+      {
+       "ms": 4000
+      },
+      {
+       "ms": 8000
+      },
+      {
+       "ms": 15000
+      }
+     ],
+     "song": {
+      "query": "ABBA Dancing Queen",
+      "title": "Dancing Queen",
+      "artist": "ABBA",
+      "album": "",
+      "cover": "",
+      "year": 1976,
+      "uri": "",
+      "startMs": 0
+     },
+     "fact": "ABBA spillede den første gang for den svenske kongefamilie – ved en festaften før brylluppet i 1976."
+    },
+    {
+     "id": "q3",
+     "type": "choice",
+     "prompt": "Hvilken sang er det?",
+     "emoji": "✏️",
+     "options": [
+      "Take On Me",
+      "The Sun Always Shines on TV",
+      "Hunting High and Low",
+      "Cry Wolf"
+     ],
+     "correct": 0,
+     "clips": [
+      {
+       "ms": 1500
+      },
+      {
+       "ms": 4000
+      },
+      {
+       "ms": 8000
+      },
+      {
+       "ms": 15000
+      }
+     ],
+     "song": {
+      "query": "a-ha Take On Me",
+      "title": "Take On Me",
+      "artist": "a-ha",
+      "album": "",
+      "cover": "",
+      "year": 1985,
+      "uri": "",
+      "startMs": 0
+     },
+     "fact": "Videoen er tegnet i hånden – ca. 3.000 enkeltbilleder."
+    },
+    {
+     "id": "q4",
+     "type": "choice",
+     "prompt": "Hvilken sang er det?",
+     "emoji": "🧤",
+     "options": [
+      "Beat It",
+      "Thriller",
+      "Billie Jean",
+      "Smooth Criminal"
+     ],
+     "correct": 2,
+     "clips": [
+      {
+       "ms": 1500
+      },
+      {
+       "ms": 4000
+      },
+      {
+       "ms": 8000
+      },
+      {
+       "ms": 15000
+      }
+     ],
+     "song": {
+      "query": "Michael Jackson Billie Jean",
+      "title": "Billie Jean",
+      "artist": "Michael Jackson",
+      "album": "",
+      "cover": "",
+      "year": 1983,
+      "uri": "",
+      "startMs": 0
+     },
+     "fact": "Baslinjen er så ikonisk, at man kan genkende sangen på to toner."
+    },
+    {
+     "id": "q5",
+     "type": "choice",
+     "prompt": "Hvilken sang er det?",
+     "emoji": "💖",
+     "options": [
+      "Roses Are Red",
+      "Barbie Girl",
+      "Dr. Jones",
+      "Turn Back Time"
+     ],
+     "correct": 1,
+     "clips": [
+      {
+       "ms": 1500
+      },
+      {
+       "ms": 4000
+      },
+      {
+       "ms": 8000
+      },
+      {
+       "ms": 15000
+      }
+     ],
+     "song": {
+      "query": "Aqua Barbie Girl",
+      "title": "Barbie Girl",
+      "artist": "Aqua",
+      "album": "",
+      "cover": "",
+      "year": 1997,
+      "uri": "",
+      "startMs": 0
+     },
+     "fact": "Danskerne i Aqua blev sagsøgt af Mattel – og sagen blev afvist i USA."
+    }
+   ]
+  },
+  {
+   "id": "r2",
+   "emoji": "🎤",
+   "title": "Hvem holder mikrofonen?",
+   "multiplier": 1,
+   "blurb": "Skriv kunstnerens navn. Stavefejl tilgives – tomme hjerner gør ikke.",
+   "questions": [
+    {
+     "id": "q6",
+     "type": "text",
+     "prompt": "Hvem synger \"Rolling in the Deep\"?",
+     "emoji": "🌊",
+     "correct": [
+      "Adele"
+     ],
+     "time": 25,
+     "song": {
+      "query": "Adele Rolling in the Deep",
+      "title": "Rolling in the Deep",
+      "artist": "Adele",
+      "album": "",
+      "cover": "",
+      "year": 2010,
+      "uri": "",
+      "startMs": 28000
+     }
+    },
+    {
+     "id": "q7",
+     "type": "text",
+     "prompt": "Hvem synger \"Shape of You\"?",
+     "emoji": "🥁",
+     "correct": [
+      "Ed Sheeran",
+      "Sheeran"
+     ],
+     "time": 25,
+     "song": {
+      "query": "Ed Sheeran Shape of You",
+      "title": "Shape of You",
+      "artist": "Ed Sheeran",
+      "album": "",
+      "cover": "",
+      "year": 2017,
+      "uri": "",
+      "startMs": 0
+     }
+    },
+    {
+     "id": "q8",
+     "type": "text",
+     "prompt": "Hvem synger \"Blinding Lights\"?",
+     "emoji": "🚗",
+     "correct": [
+      "The Weeknd",
+      "Weeknd",
+      "Abel Tesfaye"
+     ],
+     "time": 25,
+     "song": {
+      "query": "The Weeknd Blinding Lights",
+      "title": "Blinding Lights",
+      "artist": "The Weeknd",
+      "album": "",
+      "cover": "",
+      "year": 2019,
+      "uri": "",
+      "startMs": 0
+     }
+    },
+    {
+     "id": "q9",
+     "type": "text",
+     "prompt": "Hvilket dansk band har hittet med \"Fascination\"?",
+     "emoji": "🇩🇰",
+     "correct": [
+      "Alphabeat"
+     ],
+     "time": 25,
+     "song": {
+      "query": "Alphabeat Fascination",
+      "title": "Fascination",
+      "artist": "Alphabeat",
+      "album": "",
+      "cover": "",
+      "year": 2007,
+      "uri": "",
+      "startMs": 0
+     }
+    },
+    {
+     "id": "q10",
+     "type": "text",
+     "prompt": "Hvem synger \"7 Years\" – om at blive 60 som 7-årig?",
+     "emoji": "🎂",
+     "correct": [
+      "Lukas Graham"
+     ],
+     "time": 25,
+     "song": {
+      "query": "Lukas Graham 7 Years",
+      "title": "7 Years",
+      "artist": "Lukas Graham",
+      "album": "",
+      "cover": "",
+      "year": 2015,
+      "uri": "",
+      "startMs": 0
+     }
+    },
+    {
+     "id": "q11",
+     "type": "text",
+     "prompt": "Hvem er med på \"Uptown Funk\"? (Ét navn er nok)",
+     "emoji": "🕺",
+     "correct": [
+      "Bruno Mars",
+      "Mark Ronson"
+     ],
+     "time": 25,
+     "song": {
+      "query": "Mark Ronson Uptown Funk",
+      "title": "Uptown Funk",
+      "artist": "Mark Ronson ft. Bruno Mars",
+      "album": "",
+      "cover": "",
+      "year": 2014,
+      "uri": "",
+      "startMs": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": "r3",
+   "emoji": "📅",
+   "title": "Tidsmaskinen",
+   "multiplier": 1,
+   "blurb": "Gæt årstallet. Jo tættere på, jo flere point – ramt det på klingen og få det hele.",
+   "questions": [
+    {
+     "id": "q12",
+     "type": "year",
+     "prompt": "Hvornår udkom \"Smells Like Teen Spirit\"?",
+     "emoji": "🎸",
+     "correct": 1991,
+     "yearMin": 1960,
+     "yearMax": 2025,
+     "yearTolerance": 12,
+     "time": 25,
+     "song": {
+      "query": "Nirvana Smells Like Teen Spirit",
+      "title": "Smells Like Teen Spirit",
+      "artist": "Nirvana",
+      "album": "",
+      "cover": "",
+      "year": 1991,
+      "uri": "",
+      "startMs": 0
+     }
+    },
+    {
+     "id": "q13",
+     "type": "year",
+     "prompt": "Hvornår udkom \"Wannabe\" med Spice Girls?",
+     "emoji": "✌️",
+     "correct": 1996,
+     "yearMin": 1960,
+     "yearMax": 2025,
+     "yearTolerance": 12,
+     "time": 25,
+     "song": {
+      "query": "Spice Girls Wannabe",
+      "title": "Wannabe",
+      "artist": "Spice Girls",
+      "album": "",
+      "cover": "",
+      "year": 1996,
+      "uri": "",
+      "startMs": 0
+     }
+    },
+    {
+     "id": "q14",
+     "type": "year",
+     "prompt": "Hvornår udkom OutKasts \"Hey Ya!\"?",
+     "emoji": "📸",
+     "correct": 2003,
+     "yearMin": 1960,
+     "yearMax": 2025,
+     "yearTolerance": 12,
+     "time": 25,
+     "song": {
+      "query": "OutKast Hey Ya",
+      "title": "Hey Ya!",
+      "artist": "OutKast",
+      "album": "",
+      "cover": "",
+      "year": 2003,
+      "uri": "",
+      "startMs": 0
+     }
+    },
+    {
+     "id": "q15",
+     "type": "year",
+     "prompt": "Hvornår udkom \"Gangnam Style\"?",
+     "emoji": "🐎",
+     "correct": 2012,
+     "yearMin": 1960,
+     "yearMax": 2025,
+     "yearTolerance": 12,
+     "time": 25,
+     "song": {
+      "query": "PSY Gangnam Style",
+      "title": "Gangnam Style",
+      "artist": "PSY",
+      "album": "",
+      "cover": "",
+      "year": 2012,
+      "uri": "",
+      "startMs": 0
+     }
+    },
+    {
+     "id": "q16",
+     "type": "year",
+     "prompt": "Hvornår udkom \"Despacito\"?",
+     "emoji": "🏝️",
+     "correct": 2017,
+     "yearMin": 1960,
+     "yearMax": 2025,
+     "yearTolerance": 12,
+     "time": 25,
+     "song": {
+      "query": "Luis Fonsi Despacito",
+      "title": "Despacito",
+      "artist": "Luis Fonsi ft. Daddy Yankee",
+      "album": "",
+      "cover": "",
+      "year": 2017,
+      "uri": "",
+      "startMs": 0
+     }
+    }
+   ]
+  },
+  {
+   "id": "r4",
+   "emoji": "🎄",
+   "title": "Jule-twist",
+   "multiplier": 1,
+   "blurb": "Klassikere, nissetosser og bagvendt julepynt. Alle spørgsmålstyper er i spil.",
+   "questions": [
+    {
+     "id": "q17",
+     "type": "choice",
+     "prompt": "I \"Last Christmas\" – hvad giver sangeren væk sidste jul?",
+     "emoji": "❤️",
+     "options": [
+      "Sit hjerte",
+      "Sin hue",
+      "En gave i papir",
+      "Sin telefon"
+     ],
+     "correct": 0,
+     "song": {
+      "query": "Wham Last Christmas",
+      "title": "Last Christmas",
+      "artist": "Wham!",
+      "album": "",
+      "cover": "",
+      "year": 1984,
+      "uri": "",
+      "startMs": 0
+     },
+     "fact": "George Michael skrev, indspillede og spillede alle instrumenter selv."
+    },
+    {
+     "id": "q18",
+     "type": "year",
+     "prompt": "Hvornår udkom \"All I Want for Christmas Is You\"?",
+     "emoji": "🎤",
+     "correct": 1994,
+     "yearMin": 1960,
+     "yearMax": 2025,
+     "yearTolerance": 10,
+     "time": 25,
+     "song": {
+      "query": "Mariah Carey All I Want for Christmas Is You",
+      "title": "All I Want for Christmas Is You",
+      "artist": "Mariah Carey",
+      "album": "",
+      "cover": "",
+      "year": 1994,
+      "uri": "",
+      "startMs": 0
+     },
+     "fact": "Mariah skrev den på cirka 15 minutter sammen med Walter Afanasieff."
+    },
+    {
+     "id": "q19",
+     "type": "order",
+     "prompt": "Sortér fra ældst til nyest – tryk i rækkefølge!",
+     "emoji": "🗓️",
+     "options": [
+      "Mariah Carey – All I Want for Christmas Is You",
+      "Slade – Merry Xmas Everybody",
+      "Kelly Clarkson – Underneath the Tree",
+      "Wham! – Last Christmas"
+     ],
+     "correct": [
+      1,
+      3,
+      0,
+      2
+     ],
+     "time": 30,
+     "fact": "1973 → 1984 → 1994 → 2013."
+    },
+    {
+     "id": "q20",
+     "type": "tf",
+     "prompt": "Sandt eller falsk: \"Do They Know It's Christmas?\" blev indspillet af Band Aid i 1984.",
+     "emoji": "🌍",
+     "options": [
+      "Sandt",
+      "Falsk"
+     ],
+     "correct": 0,
+     "time": 15,
+     "song": {
+      "query": "Band Aid Do They Know It's Christmas",
+      "title": "Do They Know It's Christmas?",
+      "artist": "Band Aid",
+      "album": "",
+      "cover": "",
+      "year": 1984,
+      "uri": "",
+      "startMs": 0
+     },
+     "fact": "Indspillet på én dag, 25. november 1984."
+    },
+    {
+     "id": "q21",
+     "type": "text",
+     "prompt": "Hvad hedder julemandens rensdyr med den røde næse?",
+     "emoji": "🦌",
+     "correct": [
+      "Rudolf",
+      "Rudolph"
+     ],
+     "time": 15
+    }
+   ]
+  },
+  {
+   "id": "r5",
+   "emoji": "🔥",
+   "title": "Musikbattle",
+   "multiplier": 1,
+   "blurb": "Ingen rigtige svar – kun flertallet har ret. Medmindre vi kører omvendt…",
+   "questions": [
+    {
+     "id": "q22",
+     "type": "vote",
+     "prompt": "Bedste julehit?",
+     "emoji": "🎅",
+     "options": [
+      "Last Christmas",
+      "All I Want for Christmas Is You"
+     ],
+     "mode": "majority",
+     "time": 15,
+     "points": 600
+    },
+    {
+     "id": "q23",
+     "type": "vote",
+     "prompt": "Hvem skal spille til julefrokosten?",
+     "emoji": "🎪",
+     "options": [
+      "ABBA",
+      "Queen"
+     ],
+     "mode": "majority",
+     "time": 15,
+     "points": 600
+    },
+    {
+     "id": "q24",
+     "type": "vote",
+     "prompt": "OMVENDT! Hvilket årti havde den bedste musik? Det mindste hold vinder.",
+     "emoji": "🙃",
+     "options": [
+      "80'erne",
+      "90'erne"
+     ],
+     "mode": "minority",
+     "time": 15,
+     "points": 800
+    },
+    {
+     "id": "q25",
+     "type": "vote",
+     "prompt": "Beatles eller Rolling Stones?",
+     "emoji": "🎸",
+     "options": [
+      "The Beatles",
+      "The Rolling Stones"
+     ],
+     "mode": "majority",
+     "time": 15,
+     "points": 600
+    },
+    {
+     "id": "q26",
+     "type": "vote",
+     "prompt": "Kim Larsen eller Shu-bi-dua?",
+     "emoji": "🇩🇰",
+     "options": [
+      "Kim Larsen",
+      "Shu-bi-dua"
+     ],
+     "mode": "majority",
+     "time": 15,
+     "points": 600
+    }
+   ]
+  },
+  {
+   "id": "r6",
+   "emoji": "🎰",
+   "title": "Lykkehjulet",
+   "multiplier": 1,
+   "blurb": "Quizmasteren kan snurre hjulet inden et spørgsmål – og så er alt muligt. Dobbelt op. Tredobbelt. Kun de 5 hurtigste.",
+   "questions": [
+    {
+     "id": "q27",
+     "type": "choice",
+     "prompt": "Hvilket land vandt Eurovision i 2013 med \"Only Teardrops\"?",
+     "emoji": "🏆",
+     "options": [
+      "Sverige",
+      "Danmark",
+      "Norge",
+      "Ukraine"
+     ],
+     "correct": 1,
+     "song": {
+      "query": "Emmelie de Forest Only Teardrops",
+      "title": "Only Teardrops",
+      "artist": "Emmelie de Forest",
+      "album": "",
+      "cover": "",
+      "year": 2013,
+      "uri": "",
+      "startMs": 0
+     },
+     "fact": "Finalen foregik i Malmö – lige på den anden side af Øresund."
+    },
+    {
+     "id": "q28",
+     "type": "choice",
+     "prompt": "Hvor mange strenge har en standardguitar?",
+     "emoji": "🎸",
+     "options": [
+      "4",
+      "5",
+      "6",
+      "12"
+     ],
+     "correct": 2,
+     "time": 12
+    },
+    {
+     "id": "q29",
+     "type": "choice",
+     "prompt": "Hvem har vundet flest Grammy Awards gennem tiden?",
+     "emoji": "🏅",
+     "options": [
+      "Taylor Swift",
+      "Beyoncé",
+      "Adele",
+      "Stevie Wonder"
+     ],
+     "correct": 1
+    },
+    {
+     "id": "q30",
+     "type": "choice",
+     "prompt": "Hvilket band har Freddie Mercury, Brian May, Roger Taylor og John Deacon i?",
+     "emoji": "👑",
+     "options": [
+      "Queen",
+      "Genesis",
+      "Wings",
+      "Kiss"
+     ],
+     "correct": 0,
+     "time": 12
+    },
+    {
+     "id": "q31",
+     "type": "tf",
+     "prompt": "Sandt eller falsk: \"Baby Shark Dance\" har over 10 milliarder visninger på YouTube.",
+     "emoji": "🦈",
+     "options": [
+      "Sandt",
+      "Falsk"
+     ],
+     "correct": 0,
+     "time": 15,
+     "fact": "Ja. Den blev i 2022 den første YouTube-video med over 10 mia. visninger."
+    }
+   ]
+  },
+  {
+   "id": "r7",
+   "emoji": "👑",
+   "title": "Finalen: Alle midler",
+   "multiplier": 2,
+   "blurb": "Point tæller DOBBELT. Sats af din egen pointbeholdning på de to første – og sortér til sidst. Her kan alt vendes.",
+   "questions": [
+    {
+     "id": "q32",
+     "type": "wager",
+     "prompt": "SATS! Hvilken musikvideo var den første, MTV viste i 1981?",
+     "emoji": "📺",
+     "options": [
+      "Video Killed the Radio Star",
+      "Girls Just Want to Have Fun",
+      "Take On Me",
+      "Thriller"
+     ],
+     "correct": 0,
+     "time": 25,
+     "song": {
+      "query": "The Buggles Video Killed the Radio Star",
+      "title": "Video Killed the Radio Star",
+      "artist": "The Buggles",
+      "album": "",
+      "cover": "",
+      "year": 1979,
+      "uri": "",
+      "startMs": 0
+     }
+    },
+    {
+     "id": "q33",
+     "type": "wager",
+     "prompt": "SATS! Hvilket album regnes for det bedst sælgende nogensinde?",
+     "emoji": "💿",
+     "options": [
+      "Thriller",
+      "Back in Black",
+      "The Dark Side of the Moon",
+      "Rumours"
+     ],
+     "correct": 0,
+     "time": 25
+    },
+    {
+     "id": "q34",
+     "type": "order",
+     "prompt": "FINALE: Sortér efter udgivelsesår – ældst først!",
+     "emoji": "🏁",
+     "options": [
+      "Nirvana – Smells Like Teen Spirit",
+      "ABBA – Dancing Queen",
+      "Michael Jackson – Billie Jean",
+      "Queen – Bohemian Rhapsody"
+     ],
+     "correct": [
+      3,
+      1,
+      2,
+      0
+     ],
+     "time": 35,
+     "points": 1500,
+     "fact": "1975 → 1976 → 1983 → 1991."
+    }
+   ]
+  }
+ ]
+}
