@@ -17,10 +17,10 @@ function showJoin(msg) {
       <div class="onair rise">On air</div>
       <h1 class="h-xl t-xl rise" style="animation-delay:.05s">JULE<br><span class="logo"><i>FM</i></span></h1>
       <div class="dial rise" style="animation-delay:.1s"></div>
-      <p class="rise" style="animation-delay:.15s;opacity:.8;font-size:1.05rem">Danmarks mest forkølede radiostation sender live fra julefrokosten. Hvem er du i æteren?</p>
+      <p class="rise" style="animation-delay:.15s;opacity:.8;font-size:1.05rem">Danmarks mest innovative radiostation sender live fra Kitchens julefrokost. Hvem er du i æteren?</p>
       ${msg ? `<div class="chip red">${esc(msg)}</div>` : ''}
       <input class="field rise" id="jn" maxlength="22" placeholder="Dit navn eller kælenavn" autocomplete="off" value="${esc(last.name || '')}" style="animation-delay:.2s">
-      <input class="field rise" id="jt" maxlength="20" placeholder="Bord / hold (valgfrit)" autocomplete="off" value="${esc(last.team || '')}" style="animation-delay:.25s">
+      <input class="field rise" id="jt" maxlength="20" placeholder="Hold" autocomplete="off" value="${esc(last.team || '')}" style="animation-delay:.25s">
       <button class="btn rise" id="jgo" style="animation-delay:.3s">Gå live 📻</button>
       <div id="jerr" class="kicker" style="color:var(--no)"></div>
     </div>`;
